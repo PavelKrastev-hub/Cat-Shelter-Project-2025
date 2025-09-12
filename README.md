@@ -8,7 +8,7 @@ SoftUni-Project-Cat-Shelter
 [x] - Show home page
 [x] - Add css
 [x] - Extract css into separate js files
-[x] -
+[x] - Read home html from file system
 [x] -
 [x] -
 [x] -
