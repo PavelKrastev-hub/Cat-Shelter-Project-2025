@@ -3,7 +3,7 @@ SoftUni-Project-Cat-Shelter
 
 [x] - Initialize NodeJS Project
 [x] - Dev script
-[x] -
+[x] - Debbuging
 [x] -
 [x] -
 [x] -
