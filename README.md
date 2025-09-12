@@ -4,7 +4,7 @@ SoftUni-Project-Cat-Shelter
 [x] - Initialize NodeJS Project
 [x] - Dev script
 [x] - Debbuging
-[x] -
+[x] - Add basic http server
 [x] -
 [x] -
 [x] -

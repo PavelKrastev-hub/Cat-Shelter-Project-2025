@@ -1,4 +1,11 @@
-console.log('Hello World!')
-console.log('Hello World!!')
-console.log('Hello World!!!')
-console.log('Hello World3')
+import http from 'http';
+
+const server = http.createServer((req, res) => {
+   res.write('Hello world!');
+
+   res.end();
+});
+
+server.listen(5200);
+
+console.log('Server is listening on http://localhost:5200...');
