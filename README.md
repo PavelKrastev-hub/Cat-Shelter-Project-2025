@@ -5,9 +5,9 @@ SoftUni-Project-Cat-Shelter
 [x] - Dev script
 [x] - Debbuging
 [x] - Add basic http server
-[x] -
-[x] -
-[x] -
+[x] - Show home page
+[x] - Add css
+[x] - Extract css into separate js files
 [x] -
 [x] -
 [x] -
