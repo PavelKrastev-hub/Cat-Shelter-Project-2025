@@ -4,8 +4,8 @@
   "description": "SoftUni-Project-Cat-Shelter",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
-    "dev": "" 
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js" 
   },
   "repository": {
     "type": "git",
