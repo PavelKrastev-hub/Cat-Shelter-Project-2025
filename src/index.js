@@ -3,9 +3,28 @@ import fs from 'fs/promises';
 import { homeView } from './views/home/homeView.js';
 import { addBreedView } from './views/addBreedView.js';
 import { addCatView } from './views/addCatvView.js';
+import cats from './views/cats.js';
 
 const server = http.createServer(async (req, res) => {
    let html;
+
+   if(req.method === 'POST') {
+      console.log('POST HAS BEEN MADE');
+      let data = '';
+
+      req.on('data', (chunk) => {
+         data += chunk.toString();
+      });
+
+      req.on('end', () => {
+         const searchParams = new URLSearchParams(data);
+         const newCat = Object.fromEntries(searchParams.entries());
+
+         cats.push(newCat);
+
+         //Redirect to home page
+      })
+   };
 
    switch (req.url) {
       case '/':
@@ -39,21 +58,8 @@ const server = http.createServer(async (req, res) => {
    res.end();
 });
 
-export function catTemplate(cat) {
-   return `
-      <li>
-         <img src="${cat.imageUrl}" alt="${cat.name}">
-         <h3></h3>
-         <p><span>Breed: </span>${cat.breed}</p>
-         <p><span>Description: </span>${cat.description}</p>
-         <ul class="buttons">
-            <li class="btn edit"><a href="">Change Info</a></li>
-            <li class="btn delete"><a href="">New Home</a></li>
-         </ul>
-      </li>
-   `
-};
-
 server.listen(5200);
 
 console.log('Server is listening on http://localhost:5200...');
+
+'https://static.vecteezy.com/system/resources/thumbnails/022/963/918/small_2x/ai-generative-cute-cat-isolated-on-solid-background-photo.jpg'

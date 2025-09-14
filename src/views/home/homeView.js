@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import { catTemplate } from '../../index.js';
 import cats from '../cats.js';
 
 export async function homeView() {
@@ -10,4 +9,19 @@ export async function homeView() {
    const result = html.replace('{{cats}}', catsHtml);
 
    return result;
+};
+
+function catTemplate(cat) {
+   return `
+      <li>
+         <img src="${cat.imageUrl}" alt="">
+         <h3>${cat.name}</h3>
+         <p><span>Breed: </span>${cat.breed}</p>
+         <p><span>Description: </span>${cat.description}</p>
+         <ul class="buttons">
+            <li class="btn edit"><a href="">Change Info</a></li>
+            <li class="btn delete"><a href="">New Home</a></li>
+         </ul>
+      </li>
+   `
 };
