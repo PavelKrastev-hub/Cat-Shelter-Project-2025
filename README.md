@@ -14,7 +14,7 @@ SoftUni-Project-Cat-Shelter
 [x] - Add create cat page
 [x] - Render dynamic cats on home page
 [x] - Add cats from add-cats page
-[x] - 
+[x] - Conditional rendering with cats
 [x] - 
 [x] - 
 [x] - 

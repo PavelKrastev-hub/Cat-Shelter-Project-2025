@@ -2,7 +2,7 @@ import http from 'http';
 import fs from 'fs/promises';
 import { homeView } from './views/home/homeView.js';
 import { addBreedView } from './views/addBreedView.js';
-import { addCatView } from './views/addCatvView.js';
+import { addCatView } from './views/addCatView.js';
 import cats from './views/cats.js';
 
 const server = http.createServer(async (req, res) => {
