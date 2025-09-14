@@ -3,27 +3,31 @@ import fs from 'fs/promises';
 import { homeView } from './views/home/homeView.js';
 import { addBreedView } from './views/addBreedView.js';
 import { addCatView } from './views/addCatView.js';
-import cats from './views/cats.js';
+import { saveCat } from './data.js';
 
 const server = http.createServer(async (req, res) => {
    let html;
 
    if(req.method === 'POST') {
-      console.log('POST HAS BEEN MADE');
       let data = '';
 
       req.on('data', (chunk) => {
          data += chunk.toString();
       });
 
-      req.on('end', () => {
+      req.on('end', async () => {
          const searchParams = new URLSearchParams(data);
          const newCat = Object.fromEntries(searchParams.entries());
 
-         cats.push(newCat);
+         await saveCat(newCat);
+         // TODO Redirect to home page
+         res.writeHead(302, {
+            'location': '/',
+         });
 
-         //Redirect to home page
+         res.end();
       })
+      return;
    };
 
    switch (req.url) {

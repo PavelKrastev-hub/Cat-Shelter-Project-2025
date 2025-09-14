@@ -1,0 +1,46 @@
+{
+  "cats": [
+    {
+      "id": 1,
+      "imageUrl": "https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg",
+      "name": "Luna",
+      "breed": "British Shorthair",
+      "description": "Спокойна и обичлива котка с плътна сива козина и големи кехлибарени очи."
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://www.cdc.gov/healthy-pets/media/images/2024/04/Cat-on-couch.jpg",
+      "name": "Simba",
+      "breed": "Maine Coon",
+      "description": "Голям и пухкав мъжки котарак с игрив характер и дружелюбно поведение."
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://cdn2.thecatapi.com/images/9j5.jpg",
+      "name": "Mila",
+      "breed": "Siamese",
+      "description": "Грациозна котка със сини очи и характерни тъмни точки по лицето, лапите и опашката."
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHUlP6F15TiQpEK3oo9uzyvk0gFBypWJqAA&s",
+      "name": "Oscar",
+      "breed": "Persian",
+      "description": "Много пухкав и спокоен домашен любимец, обича гушкане и тишина."
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/ginger-maine-coon-kitten-running-on-lawn-in-royalty-free-image-1719608142.jpg?crop=1xw:0.84415xh;0,0.185xh",
+      "name": "Chloe",
+      "breed": "Bengal",
+      "description": "Енергична котка с красиви петна по козината, която обича игри и катерене."
+    },
+    {
+      "name": "Nova Kotka ",
+      "description": "Nah-Novata kotka",
+      "imageUrl": "https://static.scientificamerican.com/sciam/cache/file/2AE14CDD-1265-470C-9B15F49024186C10_source.jpg?crop=1%3A1%2Csmart&w=1000",
+      "breed": "Fluffy Cat"
+    }
+  ],
+  "breeds": []
+}

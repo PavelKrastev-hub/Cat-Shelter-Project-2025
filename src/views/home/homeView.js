@@ -1,17 +1,18 @@
 import fs from 'fs/promises';
-import cats from '../cats.js';
+import * as data from '../../data.js'
 
 export async function homeView() {
    const html = await fs.readFile('./src/views/home/index.html', { encoding: 'utf-8' });
+   const cats = await data.getCats();
 
-   const catsHtml = cats.map(cat => catTemplate(cat)).join('\n');
-   let result = '';
-
+   let catsHtml = '';
    if (cats.length > 0) {
-      result = html.replaceAll('{{cats}}', catsHtml);
+      catsHtml = cats.map(cat => catTemplate(cat)).join('\n');
    } else {
-      result = html.replaceAll('{{cats}}', `<h3></>There are no cats!</h3>`);
+      catsHtml = `<h3>There are no cats!</h3>`
    }
+
+   const result = html.replaceAll('{{cats}}', catsHtml);
    
    return result;
 };
