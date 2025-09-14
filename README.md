@@ -16,5 +16,5 @@ SoftUni-Project-Cat-Shelter
 [x] - Add cats from add-cats page
 [x] - Conditional rendering with cats
 [x] - Redirect to home page
-[x] - 
-[x] - 
+[x] - Add cats persitace
+[x] - Cache CSS

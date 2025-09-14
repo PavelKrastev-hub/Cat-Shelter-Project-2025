@@ -45,6 +45,7 @@ const server = http.createServer(async (req, res) => {
 
          res.writeHead(200, {
             "content-type": 'text/css',
+            "cache-control": 'max-age=10'
          });
 
          res.write(siteCss);
