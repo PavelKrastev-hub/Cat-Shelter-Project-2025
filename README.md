@@ -9,7 +9,7 @@ SoftUni-Project-Cat-Shelter
 [x] - Add css
 [x] - Extract css into separate js files
 [x] - Read home html from file system
-[x] -
+[x] - Read site css from file system
 [x] -
 [x] -
 [x] - 
