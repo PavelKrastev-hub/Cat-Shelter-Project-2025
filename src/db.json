@@ -36,9 +36,10 @@
       "description": "Енергична котка с красиви петна по козината, която обича игри и катерене."
     },
     {
-      "name": "Nova Kotka ",
-      "description": "Nah-Novata kotka",
-      "imageUrl": "https://static.scientificamerican.com/sciam/cache/file/2AE14CDD-1265-470C-9B15F49024186C10_source.jpg?crop=1%3A1%2Csmart&w=1000",
+      "id": 6,
+      "name": "Тодор Живков на котките",
+      "description": "Бай Тошо добородетел!",
+      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/022/963/918/small_2x/ai-generative-cute-cat-isolated-on-solid-background-photo.jpg",
       "breed": "Fluffy Cat"
     }
   ],

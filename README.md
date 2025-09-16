@@ -18,3 +18,5 @@ SoftUni-Project-Cat-Shelter
 [x] - Redirect to home page
 [x] - Add cats persitace
 [x] - Cache CSS
+[x] - Update edit cat
+[x] - Add unique id for new cat
