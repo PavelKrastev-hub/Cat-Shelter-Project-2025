@@ -34,13 +34,6 @@
       "name": "Chloe",
       "breed": "Bengal",
       "description": "Енергична котка с красиви петна по козината, която обича игри и катерене."
-    },
-    {
-      "id": 6,
-      "name": "Тодор Живков на котките",
-      "description": "Бай Тошо добородетел!",
-      "imageUrl": "https://static.vecteezy.com/system/resources/thumbnails/022/963/918/small_2x/ai-generative-cute-cat-isolated-on-solid-background-photo.jpg",
-      "breed": "Fluffy Cat"
     }
   ],
   "breeds": []
