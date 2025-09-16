@@ -7,6 +7,12 @@ export async function getCats() {
    return db.cats;
 }
 
+export async function getBreeds() {
+   
+
+   return db.breeds;
+}
+
 export async function saveCat(catData) {
    // Add cat to cats array
    db.cats.push({
@@ -16,6 +22,12 @@ export async function saveCat(catData) {
 
    await saveDb();
 }  
+
+export async function saveBreed(breedData) {
+   db.breeds.push(breedData);
+
+   await saveDb();
+}
 
 export async function getCat(id) {
    return db.cats.find(cat => cat.id === id);

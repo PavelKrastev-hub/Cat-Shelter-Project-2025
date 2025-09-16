@@ -36,5 +36,31 @@
       "description": "Енергична котка с красиви петна по козината, която обича игри и катерене."
     }
   ],
-  "breeds": []
+  "breeds": [
+    {
+    "name": "British Shorthair",
+    "origin": "UK",
+    "description": "Calm, affectionate, and easygoing cat."
+  },
+  {
+    "name": "Maine Coon",
+    "origin": "USA",
+    "description": "Large, friendly, and sociable cat."
+  },
+  {
+    "name": "Siamese",
+    "origin": "Thailand",
+    "description": "Vocal, intelligent, and affectionate cat."
+  },
+  {
+    "name": "Persian",
+    "origin": "Iran",
+    "description": "Quiet, gentle, and long-haired cat."
+  },
+  {
+    "name": "Bengal",
+    "origin": "USA",
+    "description": "Active, playful, and exotic-looking cat."
+  }
+  ]
 }

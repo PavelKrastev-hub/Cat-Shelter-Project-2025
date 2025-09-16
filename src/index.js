@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import { homeView } from './views/home/homeView.js';
 import { addBreedView } from './views/addBreedView.js';
 import { addCatView } from './views/addCatView.js';
-import { getCat, saveCat, editCat, deleteCat } from './data.js';
+import { getCat, saveCat, editCat, deleteCat, saveBreed } from './data.js';
 import { editCatView } from './views/editCatView.js';
 import { catShelterView } from './views/catShelterView.js';
 
@@ -33,6 +33,10 @@ const server = http.createServer(async (req, res) => {
             const catId = Number(segments[3]);
 
             await deleteCat(catId);
+         } else if (req.url === '/cats/add-breed') {
+            const breedResult = Object.fromEntries(searchParams.entries());
+
+            await saveBreed(breedResult);
          }
 
          
