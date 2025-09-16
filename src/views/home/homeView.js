@@ -26,7 +26,7 @@ function catTemplate(cat) {
          <p><span>Description: </span>${cat.description}</p>
          <ul class="buttons">
             <li class="btn edit"><a href="/cats/edit-cat/${cat.id}">Change Info</a></li>
-            <li class="btn delete"><a href="">New Home</a></li>
+            <li class="btn delete"><a href="/cats/shelter-cat/${cat.id}">New Home</a></li>
          </ul>
       </li>
    `

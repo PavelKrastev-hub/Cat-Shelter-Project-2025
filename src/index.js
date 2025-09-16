@@ -5,6 +5,7 @@ import { addBreedView } from './views/addBreedView.js';
 import { addCatView } from './views/addCatView.js';
 import { getCat, saveCat, editCat } from './data.js';
 import { editCatView } from './views/editCatView.js';
+import { catShelterView } from './views/catShelterView.js';
 
 const server = http.createServer(async (req, res) => {
    let html;
@@ -51,7 +52,12 @@ const server = http.createServer(async (req, res) => {
       const catId = Number(segments[3]);
 
       html = await editCatView(catId);
-   } else if (req.url === '/styles/site.css') {
+   } else if (req.url.startsWith('/cats/shelter-cat')) {
+      const segments = req.url.split('/');
+      const catId = Number(segments[3]);
+
+      html = await catShelterView(catId);
+   }else if (req.url === '/styles/site.css') {
       const siteCss = await fs.readFile('./src/styles/site.css', { encoding: 'utf-8' });
 
          res.writeHead(200, {
