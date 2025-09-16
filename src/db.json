@@ -2,24 +2,24 @@
   "cats": [
     {
       "id": 1,
+      "name": "Luna na Lunata",
+      "description": "Спокойна и обичлива котка с плътна сива козина и големи кехлибарени очи.",
       "imageUrl": "https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg",
-      "name": "Luna",
-      "breed": "British Shorthair",
-      "description": "Спокойна и обичлива котка с плътна сива козина и големи кехлибарени очи."
+      "breed": "Fluffy Cat"
     },
     {
       "id": 2,
+      "name": "Simba ",
+      "description": "Голям и пухкав мъжки котарак с игрив характер и дружелюбно поведение.",
       "imageUrl": "https://www.cdc.gov/healthy-pets/media/images/2024/04/Cat-on-couch.jpg",
-      "name": "Simba",
-      "breed": "Maine Coon",
-      "description": "Голям и пухкав мъжки котарак с игрив характер и дружелюбно поведение."
+      "breed": "Fluffy Cat"
     },
     {
       "id": 3,
+      "name": "Mila Robert",
+      "description": "Грациозна котка със сини очи и характерни тъмни точки по лицето, лапите и опашката.",
       "imageUrl": "https://cdn2.thecatapi.com/images/9j5.jpg",
-      "name": "Mila",
-      "breed": "Siamese",
-      "description": "Грациозна котка със сини очи и характерни тъмни точки по лицето, лапите и опашката."
+      "breed": "Fluffy Cat"
     },
     {
       "id": 4,

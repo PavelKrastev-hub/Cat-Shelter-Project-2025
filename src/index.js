@@ -3,7 +3,8 @@ import fs from 'fs/promises';
 import { homeView } from './views/home/homeView.js';
 import { addBreedView } from './views/addBreedView.js';
 import { addCatView } from './views/addCatView.js';
-import { saveCat } from './data.js';
+import { getCat, saveCat, editCat } from './data.js';
+import { editCatView } from './views/editCatView.js';
 
 const server = http.createServer(async (req, res) => {
    let html;
@@ -17,10 +18,19 @@ const server = http.createServer(async (req, res) => {
 
       req.on('end', async () => {
          const searchParams = new URLSearchParams(data);
-         const newCat = Object.fromEntries(searchParams.entries());
+         const catResult = Object.fromEntries(searchParams.entries());
 
-         await saveCat(newCat);
-         // TODO Redirect to home page
+         if (req.url === '/cats/add-cat') {
+            await saveCat(catResult);
+         } else if (req.url.startsWith('/cats/edit-cat')) {
+            const segments = req.url.split('/');
+            const catId = Number(segments[3]);
+
+            await editCat(catId, catResult);
+         }
+
+         
+         // Redirect to home page
          res.writeHead(302, {
             'location': '/',
          });
@@ -30,18 +40,19 @@ const server = http.createServer(async (req, res) => {
       return;
    };
 
-   switch (req.url) {
-      case '/':
-         html = await homeView();
-         break;
-      case '/cats/add-breed':
-         html = await addBreedView();
-         break;
-      case '/cats/add-cat':
-         html = await addCatView();
-         break;
-      case '/styles/site.css':
-         const siteCss = await fs.readFile('./src/styles/site.css', { encoding: 'utf-8' });
+   if (req.url === '/') {
+      html = await homeView();
+   } else if (req.url === '/cats/add-breed') {
+      html = await addBreedView();
+   } else if (req.url === '/cats/add-cat') {
+      html = await addCatView()
+   } else if (req.url.startsWith('/cats/edit-cat')) {
+      const segments = req.url.split('/');
+      const catId = Number(segments[3]);
+
+      html = await editCatView(catId);
+   } else if (req.url === '/styles/site.css') {
+      const siteCss = await fs.readFile('./src/styles/site.css', { encoding: 'utf-8' });
 
          res.writeHead(200, {
             "content-type": 'text/css',
@@ -50,8 +61,8 @@ const server = http.createServer(async (req, res) => {
 
          res.write(siteCss);
          return res.end();
-      default:
-         return res.end();
+   } else {
+      return res.end();
    }
 
    res.writeHead(200, {
