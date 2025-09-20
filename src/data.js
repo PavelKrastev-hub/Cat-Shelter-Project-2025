@@ -45,6 +45,13 @@ export async function deleteCat(catId) {
    await saveDb();
 }
 
+export async function searchCats(text) {
+   return db.cats.filter(cat => 
+      cat.name.toLowerCase().includes(text) || 
+      cat.breed.toLowerCase().includes(text)
+   );
+}
+
 async function saveDb() {
    // Serialize db
    const dbSerialized = JSON.stringify(db, null, 2);

@@ -34,33 +34,40 @@
       "name": "Chloe",
       "breed": "Bengal",
       "description": "Енергична котка с красиви петна по козината, която обича игри и катерене."
+    },
+    {
+      "id": 6,
+      "name": "Little Rennie Cat",
+      "description": "The most beautiful cat in the world! ",
+      "imageUrl": "https://scontent.fsof9-1.fna.fbcdn.net/v/t39.30808-1/541467264_32141428498789799_4925837267411287164_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=2o8Vs8Llj68Q7kNvwGo02-3&_nc_oc=Adl8GFMkVzZsQEM8YULxsBvyRydccAM-1ayWzC4HiFDCcPoJJCbc_8dzu54BH79c-rVo5RvFLM2meoXbovfmWhar&_nc_zt=24&_nc_ht=scontent.fsof9-1.fna&_nc_gid=_4RDqSXRWZTnlK5B3foujA&oh=00_AfZd5ZLH7AjSq1AKQt3kh8wOb3KtgnGlhfBEAMWlfpmAsw&oe=68CF516E",
+      "breed": "British Shorthair"
     }
   ],
   "breeds": [
     {
-    "name": "British Shorthair",
-    "origin": "UK",
-    "description": "Calm, affectionate, and easygoing cat."
-  },
-  {
-    "name": "Maine Coon",
-    "origin": "USA",
-    "description": "Large, friendly, and sociable cat."
-  },
-  {
-    "name": "Siamese",
-    "origin": "Thailand",
-    "description": "Vocal, intelligent, and affectionate cat."
-  },
-  {
-    "name": "Persian",
-    "origin": "Iran",
-    "description": "Quiet, gentle, and long-haired cat."
-  },
-  {
-    "name": "Bengal",
-    "origin": "USA",
-    "description": "Active, playful, and exotic-looking cat."
-  }
+      "name": "British Shorthair",
+      "origin": "UK",
+      "description": "Calm, affectionate, and easygoing cat."
+    },
+    {
+      "name": "Maine Coon",
+      "origin": "USA",
+      "description": "Large, friendly, and sociable cat."
+    },
+    {
+      "name": "Siamese",
+      "origin": "Thailand",
+      "description": "Vocal, intelligent, and affectionate cat."
+    },
+    {
+      "name": "Persian",
+      "origin": "Iran",
+      "description": "Quiet, gentle, and long-haired cat."
+    },
+    {
+      "name": "Bengal",
+      "origin": "USA",
+      "description": "Active, playful, and exotic-looking cat."
+    }
   ]
 }

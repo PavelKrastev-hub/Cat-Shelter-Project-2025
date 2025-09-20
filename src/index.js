@@ -3,19 +3,17 @@ import fs from 'fs/promises';
 import { homeView } from './views/home/homeView.js';
 import { addBreedView } from './views/addBreedView.js';
 import { addCatView } from './views/addCatView.js';
-import { getCat, saveCat, editCat, deleteCat, saveBreed } from './data.js';
+import { getCat, saveCat, editCat, deleteCat, saveBreed, searchCats } from './data.js';
 import { editCatView } from './views/editCatView.js';
 import { catShelterView } from './views/catShelterView.js';
 
 const server = http.createServer(async (req, res) => {
    let html;
 
-   if(req.method === 'POST') {
+   if (req.method === 'POST') {
       let data = '';
 
-      req.on('data', (chunk) => {
-         data += chunk.toString();
-      });
+      req.on('data', chunk => { data += chunk.toString(); });
 
       req.on('end', async () => {
          const searchParams = new URLSearchParams(data);
@@ -26,29 +24,28 @@ const server = http.createServer(async (req, res) => {
          } else if (req.url.startsWith('/cats/edit-cat')) {
             const segments = req.url.split('/');
             const catId = Number(segments[3]);
-
             await editCat(catId, catResult);
          } else if (req.url.startsWith('/cats/shelter-cat')) {
             const segments = req.url.split('/');
             const catId = Number(segments[3]);
-
             await deleteCat(catId);
          } else if (req.url === '/cats/add-breed') {
-            const breedResult = Object.fromEntries(searchParams.entries());
+            await saveBreed(catResult);
+         } else if (req.url === '/search') {
+            const searchedText = catResult.search?.toLowerCase() || '';
+            const filteredCats = await searchCats(searchedText);
 
-            await saveBreed(breedResult);
+            const html = await homeView(filteredCats);
+            res.writeHead(200, { 'content-type': 'text/html' });
+            return res.end(html); 
          }
 
-         
-         // Redirect to home page
-         res.writeHead(302, {
-            'location': '/',
-         });
-
+         res.writeHead(302, { 'location': '/' });
          res.end();
-      })
+      });
+
       return;
-   };
+   }
 
    if (req.url === '/') {
       html = await homeView();
@@ -66,16 +63,16 @@ const server = http.createServer(async (req, res) => {
       const catId = Number(segments[3]);
 
       html = await catShelterView(catId);
-   }else if (req.url === '/styles/site.css') {
+   } else if (req.url === '/styles/site.css') {
       const siteCss = await fs.readFile('./src/styles/site.css', { encoding: 'utf-8' });
 
-         res.writeHead(200, {
-            "content-type": 'text/css',
-            "cache-control": 'max-age=10'
-         });
+      res.writeHead(200, {
+         "content-type": 'text/css',
+         "cache-control": 'max-age=10'
+      });
 
-         res.write(siteCss);
-         return res.end();
+      res.write(siteCss);
+      return res.end();
    } else {
       return res.end();
    }

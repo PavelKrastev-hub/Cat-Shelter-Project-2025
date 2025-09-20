@@ -1,13 +1,13 @@
 import fs from 'fs/promises';
 import * as data from '../../data.js'
 
-export async function homeView() {
+export async function homeView(cats = null) {
    const html = await fs.readFile('./src/views/home/index.html', { encoding: 'utf-8' });
-   const cats = await data.getCats();
+   const catsToRender = cats || await data.getCats();
 
    let catsHtml = '';
-   if (cats.length > 0) {
-      catsHtml = cats.map(cat => catTemplate(cat)).join('\n');
+   if (catsToRender.length > 0) {
+      catsHtml = catsToRender.map(cat => catTemplate(cat)).join('\n');
    } else {
       catsHtml = `<h3>There are no cats!</h3>`
    }
